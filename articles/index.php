@@ -1,6 +1,6 @@
 <?php include("../src/layout/head.php")?>
 <title>Articles | Terraphiliacs</title>
-<link href="./public/css/articles.css" rel="stylesheet" type="text/css" />
+<link href="../src/css/articles.css" rel="stylesheet" type="text/css" />
 <?php include("../src/layout/header.php")?>
 <div class="header">
   Articles
