@@ -1,6 +1,6 @@
 <?php include("../src/head.php")?>
 <title>Articles | Terraphiliacs</title>
-<link href="https://halvkursprojekt-webbutv.manfredgustafss.repl.co/css/articles.css" rel="stylesheet" type="text/css" />
+<link href="./public/css/articles.css" rel="stylesheet" type="text/css" />
 <?php include("../src/header.php")?>
 <div class="header">
   Articles
