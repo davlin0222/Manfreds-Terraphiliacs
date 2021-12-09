@@ -180,7 +180,7 @@ main * + * {
 
 .card {
     border-radius: 1rem;
-    padding: 15px;
+    padding: 1rem;
     font-size: 1.2rem;
 }
 
@@ -189,18 +189,36 @@ main * + * {
 }
 
 .image-card {
-    border-radius: 1rem;
+    width: 100%;
+    height: auto;
     overflow: hidden;
+    border-radius: 1rem;
+    cursor: zoom-in;
+    position: relative;
 }
 
-.image-card img {
+.image-card:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+}
+
+.image-card__image {
     width: 100%;
     display: block;
-    /* transition: transform 600ms, border-radius 600ms; */
 }
 
-.image-card:focus {
-    scale: 2;
+.magnifiable-image {
+}
+
+.magnifiable-image--is-magnified {
+    cursor: zoom-out;
+    width: 90%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 footer {

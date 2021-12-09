@@ -1,12 +1,19 @@
+const menu_element = document.querySelector('.menu');
+
 document.onclick = e => {
     if (e.target.id !== 'menu-button') hideMenu();
+    // if (!e.target.classList.contains('image-card')) removeImageCardMagnification(); // on all
 };
 document.onscroll = e => {
     hideMenu();
 };
 document.getElementById('menu-button').addEventListener('click', toggleMenu);
 
-const menu_element = document.querySelector('.menu');
+document
+    .querySelectorAll('.magnifiable-image')
+    .forEach(magnifiableImage =>
+        magnifiableImage.addEventListener('click', toggleImageMagnification)
+    );
 
 function toggleMenu() {
     menu_element.classList.toggle('menu--is-open');
@@ -15,6 +22,38 @@ function toggleMenu() {
 function hideMenu() {
     menu_element.classList.remove('menu--is-open');
 }
+
+function toggleImageMagnification(event) {
+    const imageCard = event.target.parentElement;
+
+    elementScrollToCenter(imageCard);
+
+    // const width = event.target.clientWidth;
+    // const height = event.target.clientHeight;
+    // console.log(`toggleImageMagnification ~ width`, width);
+    // console.log(`toggleImageMagnification ~ height`, height);
+
+    // imageCard.style.width = width + 'px';
+    // imageCard.style.height = height + 'px';
+
+    // event.target.classList.toggle('magnifiable-image--is-magnified');
+}
+
+function elementScrollToCenter(imageCard) {
+    const elementScrollY = imageCard.offsetTop;
+    const elementClientHeight = imageCard.clientHeight;
+    const windowHeight = window.innerHeight;
+
+    const elementMiddleScrollY = elementScrollY + elementClientHeight / 2;
+
+    const ScrollToY = elementMiddleScrollY - windowHeight / 2;
+
+    window.scrollTo(0, ScrollToY);
+}
+
+// function removeImageCardMagnification(event) {
+//     event.target.parentElement.classList.remove('image-card--has-magnification');
+// }
 
 // document.querySelector('.menu').addEventListener('click', event => {
 //     console.log(`document.querySelector ~ event`, event);

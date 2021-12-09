@@ -23,7 +23,7 @@
     </div>
 
     <div class="image-card">
-        <img src="https://images.unsplash.com/photo-1507783548227-544c3b8fc065" tabindex=-1>
+        <img class="image-card__image magnifiable-image" src="https://images.unsplash.com/photo-1507783548227-544c3b8fc065">
     </div>
 
     <div class="card">
