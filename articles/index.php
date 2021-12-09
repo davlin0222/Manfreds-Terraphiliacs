@@ -1,31 +1,36 @@
 <?php include("../src/layout/head.php")?>
+
 <title>Articles | Terraphiliacs</title>
 <link href="../src/css/articles.css" rel="stylesheet" type="text/css" />
+
 <?php include("../src/layout/header.php")?>
+
 <div class="header">
-  Articles
+    Articles
 </div>
+
 <main>
-  <div class="card">
-    <div style="background-image:url(../images/hurricane.png)">
-      <div onclick="link('global-warming-effects/')">
-        <h2>How global warming affects us</h2>
-      </div>
+    <div class="card">
+        <div style="background-image:url(../images/hurricane.png)">
+            <div onclick="link('global-warming-effects/')">
+                <h2>How global warming affects us</h2>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="card">
-    <div style="background-image:url(../images/farming.png)">
-      <div>
-        <h2>Header</h2>
-      </div>
+    <div class="card">
+        <div style="background-image:url(../images/farming.png)">
+            <div>
+                <h2>Header</h2>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="card">
-    <div style="background-image:url(../images/hurricane.png)">
-      <div>
-        <h2>Header</h2>
-      </div>
+    <div class="card">
+        <div style="background-image:url(../images/hurricane.png)">
+            <div>
+                <h2>Header</h2>
+            </div>
+        </div>
     </div>
-  </div>
 </main>
+
 <?php include("../src/layout/footer.php")?>
