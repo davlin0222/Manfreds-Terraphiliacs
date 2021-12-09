@@ -1,10 +1,10 @@
 </head>
     <body>
         <header>
-            <!-- <a class="home">
-                <img class="logo" src="../../images/pine.png" alt=" ">
-                <h1>Terraphiliacs</h1>
-            </a> -->
+            <a class="home">
+                <img class="home__logo" src="../../images/pine.png" alt=" ">
+                <h1 class="home__title">Terraphiliacs</h1>
+            </a>
             
             <!-- <nav class="menu mobileHidden noTransition">
                 <a href="/">Home</a>

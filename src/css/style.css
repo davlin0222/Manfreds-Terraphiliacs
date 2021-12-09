@@ -24,7 +24,7 @@ header {
     padding: 0.5rem 1.1rem;
 
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -43,6 +43,24 @@ header {
     align-items: center;
 }
 
+.home {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #23412d;
+}
+
+.home__logo {
+    height: 2.3rem;
+}
+
+.home__title {
+    margin-left: 0.6rem;
+    text-transform: uppercase;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5rem;
+}
+
 /* Nav */
 
 nav {
@@ -50,16 +68,6 @@ nav {
     padding: 1rem;
     display: flex;
     align-items: center;
-}
-
-.home {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.logo {
-    height: 2.3rem;
 }
 
 .menu {
