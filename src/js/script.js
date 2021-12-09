@@ -16,12 +16,13 @@ document.onclick = e => {
         )
     ) {
         removeEveryImageMagnification();
-        console.log(`removeEveryImageMagnification()`);
     }
 };
+
 document.onscroll = e => {
     if (e.target.id !== 'menu-button') hideMenu();
 };
+
 document.getElementById('menu-button').addEventListener('click', toggleMenu);
 
 function toggleMenu() {
@@ -33,12 +34,23 @@ function hideMenu() {
 }
 
 function toggleImageMagnification(event) {
-    if (event.target.classList.contains('magnifiable-image--is-magnified')) return;
+    elementClassToggleAsync(
+        event.target,
+        'magnifiable-image--is-magnified',
+        centerElementAndKeepBackgroundSize
+    );
+}
+
+function elementClassToggleAsync(element, className, runBeforeAddClass) {
+    if (element.classList.contains(className)) {
+        element.classList.remove(className);
+        return;
+    }
 
     setTimeout(() => {
-        centerElementAndKeepBackgroundSize(event.target);
+        runBeforeAddClass(element);
 
-        event.target.classList.toggle('magnifiable-image--is-magnified');
+        element.classList.add(className);
     }, 0);
 }
 
