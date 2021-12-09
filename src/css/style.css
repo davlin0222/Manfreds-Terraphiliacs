@@ -199,6 +199,10 @@ main * + * {
     /* transition: transform 600ms, border-radius 600ms; */
 }
 
+.image-card:focus {
+    scale: 2;
+}
+
 footer {
     min-height: 17vh;
     padding: 25px;
@@ -206,6 +210,9 @@ footer {
 
 /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
 @media (min-width: 320px) {
+    main {
+        width: 90vw;
+    }
 }
 
 /* smartphones, Android phones, landscape iPhone */
@@ -214,6 +221,9 @@ footer {
 
 /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
 @media (min-width: 600px) {
+    main {
+        width: 70vw;
+    }
 }
 
 /* tablet, landscape iPad, lo-res laptops ands desktops */
@@ -222,8 +232,14 @@ footer {
 
 /* big landscape tablets, laptops, and desktops */
 @media (min-width: 1025px) {
+    main {
+        width: 60vw;
+    }
 }
 
 /* hi-res laptops and desktops */
 @media (min-width: 1281px) {
+    main {
+        width: 50vw;
+    }
 }
