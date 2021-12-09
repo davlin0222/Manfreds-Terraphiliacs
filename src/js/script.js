@@ -24,19 +24,23 @@ function hideMenu() {
 }
 
 function toggleImageMagnification(event) {
-    const imageCard = event.target.parentElement;
+    centerElementAndKeepBackgroundSize(event.target);
 
-    elementScrollToCenter(imageCard);
+    event.target.classList.toggle('magnifiable-image--is-magnified');
+}
 
-    // const width = event.target.clientWidth;
-    // const height = event.target.clientHeight;
-    // console.log(`toggleImageMagnification ~ width`, width);
-    // console.log(`toggleImageMagnification ~ height`, height);
+function centerElementAndKeepBackgroundSize(element) {
+    if (element.classList.contains('magnifiable-image--is-magnified')) return;
 
-    // imageCard.style.width = width + 'px';
-    // imageCard.style.height = height + 'px';
+    const parentElement = element.parentElement;
 
-    // event.target.classList.toggle('magnifiable-image--is-magnified');
+    elementScrollToCenter(parentElement);
+
+    const width = event.target.clientWidth;
+    const height = event.target.clientHeight;
+
+    parentElement.style.width = width + 'px';
+    parentElement.style.height = height + 'px';
 }
 
 function elementScrollToCenter(imageCard) {
