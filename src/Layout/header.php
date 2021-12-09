@@ -10,9 +10,10 @@
                 </div>
 
                 <div class="menu mobileHidden noTransition">
+                    <a href="/">Main</a>
                     <a href="/articles">Articles</a>
-                    <a href="#">Test2</a>
-                    <a href="#">Test3</a>
+                    <a href="/contact">Contact</a>
+                    <a href="/about">About</a>
                 </div>
             </nav>
         </header>
