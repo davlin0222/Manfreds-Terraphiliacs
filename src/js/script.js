@@ -1,19 +1,28 @@
 const menu_element = document.querySelector('.menu');
 
+const magnifiableImages = document.querySelectorAll('.magnifiable-image');
+
+magnifiableImages.forEach(magnifiableImage =>
+    magnifiableImage.addEventListener('click', toggleImageMagnification)
+);
+
 document.onclick = e => {
     if (e.target.id !== 'menu-button') hideMenu();
-    // if (!e.target.classList.contains('image-card')) removeImageCardMagnification(); // on all
+
+    const magnifiableImageArray = Array.from(magnifiableImages);
+    if (
+        magnifiableImageArray.some(magnifiableImage =>
+            magnifiableImage.classList.contains('magnifiable-image--is-magnified')
+        )
+    ) {
+        removeEveryImageMagnification();
+        console.log(`removeEveryImageMagnification()`);
+    }
 };
 document.onscroll = e => {
-    hideMenu();
+    if (e.target.id !== 'menu-button') hideMenu();
 };
 document.getElementById('menu-button').addEventListener('click', toggleMenu);
-
-document
-    .querySelectorAll('.magnifiable-image')
-    .forEach(magnifiableImage =>
-        magnifiableImage.addEventListener('click', toggleImageMagnification)
-    );
 
 function toggleMenu() {
     menu_element.classList.toggle('menu--is-open');
@@ -24,9 +33,19 @@ function hideMenu() {
 }
 
 function toggleImageMagnification(event) {
-    centerElementAndKeepBackgroundSize(event.target);
+    if (event.target.classList.contains('magnifiable-image--is-magnified')) return;
 
-    event.target.classList.toggle('magnifiable-image--is-magnified');
+    setTimeout(() => {
+        centerElementAndKeepBackgroundSize(event.target);
+
+        event.target.classList.toggle('magnifiable-image--is-magnified');
+    }, 0);
+}
+
+function removeEveryImageMagnification() {
+    magnifiableImages.forEach(magnifiableImage => {
+        magnifiableImage.classList.remove('magnifiable-image--is-magnified');
+    });
 }
 
 function centerElementAndKeepBackgroundSize(element) {
@@ -36,8 +55,8 @@ function centerElementAndKeepBackgroundSize(element) {
 
     elementScrollToCenter(parentElement);
 
-    const width = event.target.clientWidth;
-    const height = event.target.clientHeight;
+    const width = element.clientWidth;
+    const height = element.clientHeight;
 
     parentElement.style.width = width + 'px';
     parentElement.style.height = height + 'px';
@@ -54,10 +73,6 @@ function elementScrollToCenter(imageCard) {
 
     window.scrollTo(0, ScrollToY);
 }
-
-// function removeImageCardMagnification(event) {
-//     event.target.parentElement.classList.remove('image-card--has-magnification');
-// }
 
 // document.querySelector('.menu').addEventListener('click', event => {
 //     console.log(`document.querySelector ~ event`, event);
