@@ -1,6 +1,9 @@
 document.onclick = e => {
     if (e.target.id !== 'menu-button') hideMenu();
 };
+document.onscroll = e => {
+    hideMenu();
+};
 document.getElementById('menu-button').addEventListener('click', toggleMenu);
 
 const menu_element = document.querySelector('.menu');
