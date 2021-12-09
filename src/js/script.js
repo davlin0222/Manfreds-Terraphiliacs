@@ -2,26 +2,21 @@ const menu_element = document.querySelector('.menu');
 
 const magnifiableImages = document.querySelectorAll('.magnifiable-image');
 
+let isAnImageMagnified = false;
+
 magnifiableImages.forEach(magnifiableImage =>
-    magnifiableImage.addEventListener('click', toggleImageMagnification)
+    magnifiableImage.addEventListener('click', toggleImageMagnificationOfTarget)
 );
 
-document.onclick = e => {
-    if (e.target.id !== 'menu-button') hideMenu();
+// document.onclick = e => {
+//     if (e.target.id !== 'menu-button') hideMenu();
+//     unMagnifyAllImages();
+// };
 
-    const magnifiableImageArray = Array.from(magnifiableImages);
-    if (
-        magnifiableImageArray.some(magnifiableImage =>
-            magnifiableImage.classList.contains('magnifiable-image--is-magnified')
-        )
-    ) {
-        removeEveryImageMagnification();
-    }
-};
-
-document.onscroll = e => {
-    if (e.target.id !== 'menu-button') hideMenu();
-};
+// document.onscroll = e => {
+//     if (e.target.id !== 'menu-button') hideMenu();
+//     unMagnifyAllImages();
+// };
 
 document.getElementById('menu-button').addEventListener('click', toggleMenu);
 
@@ -33,50 +28,45 @@ function hideMenu() {
     menu_element.classList.remove('menu--is-open');
 }
 
-function toggleImageMagnification(event) {
-    elementClassToggleAsync(
-        event.target,
-        'magnifiable-image--is-magnified',
-        centerElementAndKeepBackgroundSize
-    );
-}
-
-function elementClassToggleAsync(element, className, runBeforeAddClass) {
-    if (element.classList.contains(className)) {
-        element.classList.remove(className);
+function toggleImageMagnificationOfTarget(event) {
+    if (isAnImageMagnified) {
+        unMagnifyAllImages();
         return;
     }
 
-    setTimeout(() => {
-        runBeforeAddClass(element);
-
-        element.classList.add(className);
-    }, 0);
+    magnifyImage(event.target);
 }
 
-function removeEveryImageMagnification() {
-    magnifiableImages.forEach(magnifiableImage => {
+function magnifyImage(imageToMagnify) {
+    elementScrollToCenter(imageToMagnify.parentElement);
+    elementPreserveSize(imageToMagnify.parentElement);
+
+    imageToMagnify.classList.add('magnifiable-image--is-magnified');
+    isAnImageMagnified = true;
+}
+
+function unMagnifyAllImages() {
+    for (const magnifiableImage of magnifiableImages) {
         magnifiableImage.classList.remove('magnifiable-image--is-magnified');
-    });
+    }
+    isAnImageMagnified = false;
+
+    // magnifiableImages.forEach(magnifiableImage => {
+    //     magnifiableImage.classList.remove('magnifiable-image--is-magnified');
+    // });
 }
 
-function centerElementAndKeepBackgroundSize(element) {
-    if (element.classList.contains('magnifiable-image--is-magnified')) return;
-
-    const parentElement = element.parentElement;
-
-    elementScrollToCenter(parentElement);
-
+function elementPreserveSize(element) {
     const width = element.clientWidth;
     const height = element.clientHeight;
 
-    parentElement.style.width = width + 'px';
-    parentElement.style.height = height + 'px';
+    element.style.width = width + 'px';
+    element.style.height = height + 'px';
 }
 
-function elementScrollToCenter(imageCard) {
-    const elementScrollY = imageCard.offsetTop;
-    const elementClientHeight = imageCard.clientHeight;
+function elementScrollToCenter(element) {
+    const elementScrollY = element.offsetTop;
+    const elementClientHeight = element.clientHeight;
     const windowHeight = window.innerHeight;
 
     const elementMiddleScrollY = elementScrollY + elementClientHeight / 2;
