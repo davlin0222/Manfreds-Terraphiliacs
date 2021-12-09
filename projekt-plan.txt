@@ -1,0 +1,9 @@
+Webbsida som informerar om klimatet/global uppvärmning
+
+header med logga knapp för meny
+på datorskärm är menyen i headern istället för separat
+
+main med innehåll, olika sidor med olika innehåll
+sista i main är källor och referenser till innehållet
+
+footer med något i
