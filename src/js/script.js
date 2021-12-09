@@ -1,9 +1,16 @@
-document.querySelector('.menuButton').addEventListener('click', toggleMenu);
+document.onclick = e => {
+    if (e.target.id !== 'menu-button') hideMenu();
+};
+document.getElementById('menu-button').addEventListener('click', toggleMenu);
 
 const menu_element = document.querySelector('.menu');
 
 function toggleMenu() {
     menu_element.classList.toggle('menu--is-open');
+}
+
+function hideMenu() {
+    menu_element.classList.remove('menu--is-open');
 }
 
 // document.querySelector('.menu').addEventListener('click', event => {

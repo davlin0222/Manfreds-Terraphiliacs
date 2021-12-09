@@ -13,5 +13,5 @@
                 <a class="menu__item" href="/about">About</a>
             </nav>
             
-            <div class="menuButton">&equiv;</div>
+            <div class="menu-button" id="menu-button">&equiv;</div>
         </header>
