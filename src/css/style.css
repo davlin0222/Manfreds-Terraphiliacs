@@ -163,27 +163,41 @@ body {
 
 main {
     padding: 1.5vh 0;
+    width: 95vw;
+    margin: auto;
 }
 
+main * + * {
+    margin-top: 1rem;
+}
+
+.large-heading {
+    margin-top: 2.4rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* main img:focus {
+    /* transform: scale(1.05263);
+    border-radius: 1px;
+} */
+
 .card {
-    width: 95vw;
-    margin: 1.5vh auto;
-    border-radius: 20px;
+    border-radius: 1rem;
     padding: 15px;
     font-size: 1.2rem;
 }
 
-main img {
-    display: block;
-    width: 95%;
-    margin: 1.5vh auto;
-    border-radius: 20px;
-    transition: transform 600ms, border-radius 600ms;
+.image-card {
+    border-radius: 1rem;
+    overflow: hidden;
 }
 
-main img:focus {
-    /* transform: scale(1.05263); */
-    border-radius: 1px;
+.image-card img {
+    width: 100%;
+    display: block;
+    /* transition: transform 600ms, border-radius 600ms; */
 }
 
 .card h1 {
@@ -239,39 +253,4 @@ footer {
 
 /* hi-res laptops and desktops */
 @media (min-width: 1281px) {
-    /* .menuButton {
-        display: none;
-    }
-
-    .menu {
-        flex-direction: row;
-        position: initial;
-        margin-left: auto;
-        width: 33%;
-        transition: none;
-    }
-
-    .menu a {
-        height: initial;
-        border-bottom: none;
-    }
-
-    .card,
-    main img {
-        width: calc(510px + 10vw);
-    }
-
-    main img:focus {
-        transform: scale(1.05263);
-        border-radius: 1px;
-    } */
-}
-
-/* .noTransition {
-    transition: none;
-} */
-
-.heading {
-    margin: 3rem;
-    text-align: center;
 }

@@ -5,7 +5,7 @@
 <?php include("src/layout/header.php") ?>
 
 <main>
-    <h1 class="heading">Terraphiliacs</h1>
+    <h1 class="large-heading">Terraphiliacs</h1>
     <div class="card">
         <p>
             Eat trash, burn trees, consume thy parents, go hunting for prey, drink all the water, no more water, fish can't swim on land, other people can't live without water, you hold all the water, they're your slaves, create an empire,
@@ -22,7 +22,9 @@
         <p> / quote by "Ed Sherran"
     </div>
 
-    <img src="https://images.unsplash.com/photo-1507783548227-544c3b8fc065" tabindex=-1>
+    <div class="image-card">
+        <img src="https://images.unsplash.com/photo-1507783548227-544c3b8fc065" tabindex=-1>
+    </div>
 
     <div class="card">
         <h1>Lorem ipsum dolor</h1>
