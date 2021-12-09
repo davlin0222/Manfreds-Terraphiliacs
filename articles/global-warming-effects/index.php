@@ -1,6 +1,6 @@
-<?php include("../../src/head.php")?>
+<?php include("../../src/layout/head.php")?>
 <title>How global warming affects us | Terraphiliacs</title>
-<?php include("../../src/header.php")?>
+<?php include("../../src/layout/header.php")?>
 <main>
   <div class="card">
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit voluptatibus, dolorum tenetur voluptates quaerat modi minima id ut, non laborum nam odit. Nostrum voluptates dignissimos, corrupti voluptatem hic blanditiis laboriosam.
@@ -22,4 +22,4 @@
     </p>
   </div>
 </main>
-<?php include("../../src/footer.php")?>
+<?php include("../../src/layout/footer.php")?>

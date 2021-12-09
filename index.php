@@ -1,8 +1,8 @@
-<?php include("src/head.php")?>
+<?php include("src/layout/head.php")?>
 <title>Terraphiliacs</title>
-<?php include("src/header.php")?>
+<?php include("src/layout/header.php")?>
 
 <?php 
 include("src/main.php");
-include("src/footer.php");
+include("src/layout/footer.php");
 ?>

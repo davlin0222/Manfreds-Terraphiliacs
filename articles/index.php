@@ -1,7 +1,7 @@
-<?php include("../src/head.php")?>
+<?php include("../src/layout/head.php")?>
 <title>Articles | Terraphiliacs</title>
 <link href="./public/css/articles.css" rel="stylesheet" type="text/css" />
-<?php include("../src/header.php")?>
+<?php include("../src/layout/header.php")?>
 <div class="header">
   Articles
 </div>
@@ -28,4 +28,4 @@
     </div>
   </div>
 </main>
-<?php include("../src/footer.php")?>
+<?php include("../src/layout/footer.php")?>
