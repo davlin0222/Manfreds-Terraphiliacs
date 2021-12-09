@@ -1,28 +1,53 @@
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: rgb(166, 189, 174);
 }
 
+html,
 body {
-    background: rgb(8, 39, 19);
+    background: #082713;
+    color: #a6bdae;
     overflow-x: hidden;
 }
 
 header,
-.card,
-footer {
-    background: rgb(10, 49, 23);
+footer,
+.card {
+    background: #0a3117;
 }
 
 header {
-    min-height: 13vh;
+    min-height: 10vh;
+    padding: 0.5rem 1.1rem;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
+.menuButton {
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 0.2rem;
+    font-size: 2.2rem;
+    background: #4a7c5b;
+
+    user-select: none;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Nav */
+
 nav {
-    height: 13vh;
-    padding: 3%;
+    height: 18vh;
+    padding: 1rem;
     display: flex;
     align-items: center;
 }
@@ -35,17 +60,6 @@ nav {
 
 .logo {
     height: 2.3rem;
-}
-
-.menuButton {
-    z-index: 100;
-    background: rgb(74, 124, 91);
-    font-size: 2rem;
-    height: 2.3rem;
-    width: 2.3rem;
-    border-radius: 0.5vw;
-    text-align: center;
-    user-select: none;
 }
 
 .menu {
@@ -80,12 +94,21 @@ nav {
     background: rgb(70, 114, 85);
 }
 
+.mobileHidden {
+    top: calc(8vh - calc(0.87 * 5rem));
+    left: -14%;
+    transform: scale(0.13);
+    transition: top 350ms ease-in, left 350ms ease-in-out, transform 350ms ease-in-out;
+}
+
+/* Main */
+
 main {
     padding: 1.5vh 0;
 }
 
 .card {
-    width: 95%;
+    width: 95vw;
     margin: 1.5vh auto;
     border-radius: 20px;
     padding: 15px;
@@ -136,17 +159,28 @@ footer {
     padding: 25px;
 }
 
-@media (max-width: 599px) {
-    .mobileHidden {
-        top: calc(8vh - calc(0.87 * 5rem));
-        left: -14%;
-        transform: scale(0.13);
-        transition: top 350ms ease-in, left 350ms ease-in-out, transform 350ms ease-in-out;
-    }
+/* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+@media (min-width: 320px) {
 }
 
+/* smartphones, Android phones, landscape iPhone */
+@media (min-width: 480px) {
+}
+
+/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
 @media (min-width: 600px) {
-    /* Desktop version */
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-width: 801px) {
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-width: 1025px) {
+}
+
+/* hi-res laptops and desktops */
+@media (min-width: 1281px) {
     .menuButton {
         display: none;
     }
@@ -169,12 +203,17 @@ footer {
         width: calc(510px + 10vw);
     }
 
-    /* main img:focus{
-    transform: scale(1.05263);
-    border-radius: 1px;
-  } */
+    main img:focus {
+        transform: scale(1.05263);
+        border-radius: 1px;
+    }
 }
 
 .noTransition {
     transition: none;
+}
+
+.heading {
+    margin: 3rem;
+    text-align: center;
 }

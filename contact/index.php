@@ -1,6 +1,6 @@
 <?php include("../src/layout/head.php")?>
 
-<title>Example | Terraphiliacs</title>
+<title>Contact | Terraphiliacs</title>
 <!-- optional extra css -->
 <!-- <link href="../src/css/example.css" rel="stylesheet" type="text/css" /> -->
 

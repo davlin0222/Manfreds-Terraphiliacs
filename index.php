@@ -5,6 +5,7 @@
 <?php include("src/layout/header.php") ?>
 
 <main>
+    <h1 class="heading">Terraphiliacs</h1>
     <div class="card">
         <p>
             Eat trash, burn trees, consume thy parents, go hunting for prey, drink all the water, no more water, fish can't swim on land, other people can't live without water, you hold all the water, they're your slaves, create an empire,
