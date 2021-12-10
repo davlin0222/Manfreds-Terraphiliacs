@@ -10,7 +10,10 @@ magnifiableImages.forEach(magnifiableImage =>
     magnifiableImage.addEventListener('click', toggleImageMagnificationOfTarget)
 );
 
-// TODO: exit magnify on esc
+document.onkeyup = e => {
+    if (e.target.id !== 'menu-button') hideMenu();
+    toggleImageMagnification(e);
+};
 
 document.onclick = e => {
     if (e.target.id !== 'menu-button') hideMenu();
