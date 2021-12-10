@@ -2,21 +2,24 @@ const menu_element = document.querySelector('.menu');
 
 const magnifiableImages = document.querySelectorAll('.magnifiable-image');
 
-let isAnImageMagnified = false;
+let isImageMagnified = false;
+
+let selectedMagnifiableImage;
+// let imageToDeMagnify;
 
 magnifiableImages.forEach(magnifiableImage =>
     magnifiableImage.addEventListener('click', toggleImageMagnificationOfTarget)
 );
 
-// document.onclick = e => {
-//     if (e.target.id !== 'menu-button') hideMenu();
-//     unMagnifyAllImages();
-// };
+document.onclick = e => {
+    if (e.target.id !== 'menu-button') hideMenu();
+    toggleImageMagnification(e);
+};
 
-// document.onscroll = e => {
-//     if (e.target.id !== 'menu-button') hideMenu();
-//     unMagnifyAllImages();
-// };
+document.onscroll = e => {
+    if (e.target.id !== 'menu-button') hideMenu();
+    toggleImageMagnification(e);
+};
 
 document.getElementById('menu-button').addEventListener('click', toggleMenu);
 
@@ -29,31 +32,38 @@ function hideMenu() {
 }
 
 function toggleImageMagnificationOfTarget(event) {
-    if (isAnImageMagnified) {
-        unMagnifyAllImages();
+    console.log(`toggleImageMagnificationOfTarget`);
+
+    selectedMagnifiableImage = event.target;
+    // if (isAnImageMagnified) {
+    //     unMagnifyAllImages();
+    //     return;
+    // }
+
+    // magnifyImage(event.target);
+}
+
+function toggleImageMagnification(documentEvent) {
+    if (!selectedMagnifiableImage) return;
+
+    if (isImageMagnified) {
+        selectedMagnifiableImage.classList.remove('magnifiable-image--is-magnified');
+        selectedMagnifiableImage = null;
+        isImageMagnified = false;
         return;
     }
 
-    magnifyImage(event.target);
-}
+    const scrollY = scrollYToScrollElementToCenter(selectedMagnifiableImage);
 
-function magnifyImage(imageToMagnify) {
-    elementScrollToCenter(imageToMagnify.parentElement);
-    elementPreserveSize(imageToMagnify.parentElement);
-
-    imageToMagnify.classList.add('magnifiable-image--is-magnified');
-    isAnImageMagnified = true;
-}
-
-function unMagnifyAllImages() {
-    for (const magnifiableImage of magnifiableImages) {
-        magnifiableImage.classList.remove('magnifiable-image--is-magnified');
+    if (documentEvent.type === 'click' && window.scrollY !== scrollY) {
+        window.scrollTo(0, scrollY);
+        return;
     }
-    isAnImageMagnified = false;
 
-    // magnifiableImages.forEach(magnifiableImage => {
-    //     magnifiableImage.classList.remove('magnifiable-image--is-magnified');
-    // });
+    elementPreserveSize(selectedMagnifiableImage.parentElement);
+
+    selectedMagnifiableImage.classList.add('magnifiable-image--is-magnified');
+    isImageMagnified = true;
 }
 
 function elementPreserveSize(element) {
@@ -64,17 +74,37 @@ function elementPreserveSize(element) {
     element.style.height = height + 'px';
 }
 
-function elementScrollToCenter(element) {
+function scrollYToScrollElementToCenter(element) {
     const elementScrollY = element.offsetTop;
     const elementClientHeight = element.clientHeight;
     const windowHeight = window.innerHeight;
 
-    const elementMiddleScrollY = elementScrollY + elementClientHeight / 2;
+    const elementCenterScrollY = elementScrollY + elementClientHeight / 2;
 
-    const ScrollToY = elementMiddleScrollY - windowHeight / 2;
+    const ScrollToY = elementCenterScrollY - windowHeight / 2;
 
-    window.scrollTo(0, ScrollToY);
+    return ScrollToY;
 }
+
+// function unMagnifyClassReplacement(magnifiableImage) {
+//     magnifiableImage.style.cursor = 'zoom-in';
+//     magnifiableImage.style.width = '100%';
+//     magnifiableImage.style.position = 'static';
+//     // magnifiableImage.style.top = '50%';
+//     // magnifiableImage.style.left = '50%';
+//     magnifiableImage.style.transform = 'translate(0, 0)';
+//     magnifiableImage.style.boxShadow = 'none';
+// }
+
+// function magnifyClassReplacement(magnifiableImage) {
+//     magnifiableImage.style.cursor = 'zoom-out';
+//     magnifiableImage.style.width = '90%';
+//     magnifiableImage.style.position = 'fixed';
+//     magnifiableImage.style.top = '50%';
+//     magnifiableImage.style.left = '50%';
+//     magnifiableImage.style.transform = 'translate(-50%, -50%)';
+//     magnifiableImage.style.boxShadow = '0 0 1000px 0 #000';
+// }
 
 // document.querySelector('.menu').addEventListener('click', event => {
 //     console.log(`document.querySelector ~ event`, event);
