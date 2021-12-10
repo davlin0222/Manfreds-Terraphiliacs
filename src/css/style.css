@@ -174,6 +174,12 @@ main * + * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.divider {
+    width: 80%;
+    margin: 2rem auto;
+    border-bottom: 1px solid #a6bdae;
+}
+
 .card {
     display: block;
     border-radius: 0.6rem;
@@ -229,7 +235,9 @@ main * + * {
     top: 50%;
     transform: translate(-50%, -50%);
 
-    font-size: 3rem;
+    font-size: 1.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
     color: #d2e4e3;
     text-decoration: none;
     text-shadow: 0.1rem 0.1rem 0.7rem #000;
@@ -238,12 +246,16 @@ main * + * {
 footer {
     min-height: 17vh;
     padding: 25px;
+    margin-top: 2rem;
 }
 
 /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
 @media (min-width: 320px) {
     main {
         width: 90vw;
+    }
+    .image-card__text {
+        font-size: 1.7rem;
     }
 }
 
@@ -256,10 +268,16 @@ footer {
     main {
         width: 70vw;
     }
+    .image-card__text {
+        font-size: 2.2rem;
+    }
 }
 
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 @media (min-width: 801px) {
+    .image-card__text {
+        font-size: 2.9rem;
+    }
 }
 
 /* big landscape tablets, laptops, and desktops */

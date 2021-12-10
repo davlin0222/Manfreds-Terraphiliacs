@@ -5,9 +5,9 @@
 <?php include("../src/layout/header.php")?>
 
 <main>
-    <h1 class="large-heading">Articles</div>
+    <h1 class="large-heading">Articles</h1>
 
-    /* TODO: Add divider */
+    <div class="divider"></div>
 
     <div class="image-card">
         <a class="image-card__text" href="/global-warming-effects">How global warming affects us</a>
