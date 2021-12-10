@@ -1,15 +1,14 @@
 <?php include("../src/layout/head.php")?>
 
 <title>About | Terraphiliacs</title>
-<!-- optional extra css -->
-<!-- <link href="../src/css/example.css" rel="stylesheet" type="text/css" /> -->
 
 <?php include("../src/layout/header.php")?>
 
 <main>
-    <!-- as many cards as you wish -->
+    <h1 class="large-heading">About us</h1>
+
     <div class="card">
-      <!-- content -->
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa, iusto! Quas ut ducimus nam facilis in inventore quasi quam repudiandae.
     </div>
 </main>
 

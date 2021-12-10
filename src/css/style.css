@@ -164,6 +164,7 @@ body {
 main {
     padding: 1.5vh 0;
     width: 95vw;
+    min-height: 77vh;
     margin: auto;
 }
 
@@ -253,6 +254,8 @@ footer {
     min-height: 17vh;
     padding: 25px;
     text-align: center;
+    position: sticky;
+    bottom: 0;
 }
 
 footer * + * {
