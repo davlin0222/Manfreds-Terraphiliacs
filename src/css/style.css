@@ -29,6 +29,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    user-select: none;
 }
 
 .menu-button {
@@ -115,8 +116,9 @@ body {
     display: none;
 }
 
-.menu a:hover {
-    background: #235a35;
+.menu__item:hover,
+.menu__item:focus {
+    text-decoration: underline;
 }
 
 /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
@@ -132,12 +134,13 @@ body {
         border-radius: 0;
         border: none;
         background: inherit;
-        padding: 0.5rem;
+        padding: 0rem;
         min-width: min-content;
     }
 
     .menu__item {
-        padding: 0.2rem 0.8rem;
+        padding: 1rem 1.2rem;
+        outline: none;
     }
 
     .menu__item::after {
@@ -145,7 +148,8 @@ body {
         display: block;
         position: absolute;
         width: 100%;
-        height: 100%;
+        height: 50%;
+        bottom: 25%;
         border-right: 1px solid #a6bdae;
         border-bottom: none;
     }
@@ -239,6 +243,7 @@ main * + * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 600;
     color: #d2e4e3;
+    text-align: center;
     text-decoration: none;
     text-shadow: 0.1rem 0.1rem 0.7rem #000;
 }
