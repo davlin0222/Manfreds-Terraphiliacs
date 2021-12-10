@@ -1,5 +1,7 @@
         <footer class="footer">
-            <p><i>Placeholder text for footer. </i>Terraphiliacs 2021</p>
+            <p><i>Terraphiliacs ©2021</i></p>
+            <p>Created by Manfred</p>
+            <p>Further developed by <a href="mailto:davlin@creatorise.com">David</a></p>
         </footer>
     </body>
 </html>

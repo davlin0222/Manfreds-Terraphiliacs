@@ -249,9 +249,18 @@ main * + * {
 }
 
 footer {
+    margin-top: 2rem;
     min-height: 17vh;
     padding: 25px;
-    margin-top: 2rem;
+    text-align: center;
+}
+
+footer * + * {
+    margin-top: 0.5rem;
+}
+
+footer a {
+    color: #03b9aa;
 }
 
 /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
