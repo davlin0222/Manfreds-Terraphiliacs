@@ -6,6 +6,7 @@
 
 <main>
     <h1 class="large-heading">Terraphiliacs</h1>
+
     <div class="card">
         <p>
             Eat trash, burn trees, consume thy parents, go hunting for prey, drink all the water, no more water, fish can't swim on land, other people can't live without water, you hold all the water, they're your slaves, create an empire,
@@ -23,7 +24,7 @@
     </div>
 
     <div class="image-card">
-        <img class="image-card__image magnifiable-image" src="https://images.unsplash.com/photo-1507783548227-544c3b8fc065">
+        <img class="image-card__image magnifiable-image" src="https://images.unsplash.com/photo-1507783548227-544c3b8fc065" alt="Autumn leaves" />
     </div>
 
     <div class="card">

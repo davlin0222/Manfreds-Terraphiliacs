@@ -1,4 +1,4 @@
-.header {
+/* .header {
     background: rgb(10, 49, 23);
     width: 95%;
     margin: 1.5vh auto -1.5vh auto;
@@ -34,11 +34,11 @@ main {
 
 .card div div h2 {
     color: rgba(0, 0, 0, 1);
-}
+} */
 
 @media (min-width: 600px) {
     /* Desktop version */
-    .header {
+    /* .header {
         width: calc(510px + 10vw);
         margin: 1.5vh auto 0 auto;
     }
@@ -63,5 +63,5 @@ main {
     .card div div {
         height: calc(480px + 10vw);
         background-size: 100%;
-    }
+    } */
 }

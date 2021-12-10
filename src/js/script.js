@@ -51,9 +51,7 @@ function toggleImageMagnification(documentEvent) {
         return;
     }
 
-    const scrollY = scrollYToScrollElementToCenter(
-        selectedMagnifiableImage.parentElement
-    );
+    const scrollY = scrollYToScrollElementToCenter(selectedMagnifiableImageParent);
 
     const currentScrollY = Math.round(window.scrollY);
     if (documentEvent.type === 'click' && currentScrollY !== scrollY) {
@@ -61,7 +59,7 @@ function toggleImageMagnification(documentEvent) {
         return;
     }
 
-    elementPreserveSize(selectedMagnifiableImage.parentElement);
+    elementPreserveSize(selectedMagnifiableImageParent);
 
     selectedMagnifiableImage.classList.add('magnifiable-image--is-magnified');
     isImageMagnified = true;

@@ -5,18 +5,20 @@
 
 <?php include("../src/layout/header.php")?>
 
-<div class="header">
-    Articles
-</div>
 
 <main>
-    <div class="card">
-        <div style="background-image:url(../images/hurricane.png)">
+    <h1 class="large-heading">Articles</div>
+
+    <a class="image-card">
+        <a class="image-card__text" href="/global-warming-effects">How global warming affects us</a>
+
+        <img class="image-card__image magnifiable-image" src="../images/hurricane.png" alt="A hurricane seen from above">
+        <!-- <div style="background-image:url(../images/hurricane.png)">
             <div onclick="link('global-warming-effects/')">
-                <h2>How global warming affects us</h2>
             </div>
-        </div>
-    </div>
+        </div> -->
+    </a>
+
     <div class="card">
         <div style="background-image:url(../images/farming.png)">
             <div>
@@ -24,6 +26,7 @@
             </div>
         </div>
     </div>
+
     <div class="card">
         <div style="background-image:url(../images/hurricane.png)">
             <div>
@@ -31,6 +34,7 @@
             </div>
         </div>
     </div>
+
 </main>
 
 <?php include("../src/layout/footer.php")?>
