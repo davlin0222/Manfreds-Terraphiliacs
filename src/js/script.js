@@ -5,7 +5,6 @@ const magnifiableImages = document.querySelectorAll('.magnifiable-image');
 let isImageMagnified = false;
 
 let selectedMagnifiableImage;
-// let imageToDeMagnify;
 
 magnifiableImages.forEach(magnifiableImage =>
     magnifiableImage.addEventListener('click', toggleImageMagnificationOfTarget)
@@ -32,8 +31,6 @@ function hideMenu() {
 }
 
 function toggleImageMagnificationOfTarget(event) {
-    console.log(`toggleImageMagnificationOfTarget`);
-
     selectedMagnifiableImage = event.target;
     // if (isAnImageMagnified) {
     //     unMagnifyAllImages();
@@ -53,9 +50,12 @@ function toggleImageMagnification(documentEvent) {
         return;
     }
 
-    const scrollY = scrollYToScrollElementToCenter(selectedMagnifiableImage);
+    const scrollY = scrollYToScrollElementToCenter(
+        selectedMagnifiableImage.parentElement
+    );
 
-    if (documentEvent.type === 'click' && window.scrollY !== scrollY) {
+    const currentScrollY = Math.round(window.scrollY);
+    if (documentEvent.type === 'click' && currentScrollY !== scrollY) {
         window.scrollTo(0, scrollY);
         return;
     }
