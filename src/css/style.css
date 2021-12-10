@@ -50,7 +50,7 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #23412d;
+    color: #48815b;
 }
 
 .home__logo {
@@ -132,11 +132,7 @@ body {
         border-radius: 0;
         border: none;
         background: inherit;
-        /* height: 1rem; */
         padding: 0.5rem;
-        /* min-width: fit-content; */
-        /* margin-right: 0vw; */
-        /* width: fit-content; */
         min-width: min-content;
     }
 
@@ -179,7 +175,7 @@ main * + * {
 }
 
 .card {
-    border-radius: 1rem;
+    border-radius: 0.6rem;
     padding: 1rem;
     font-size: 1.2rem;
 }
@@ -189,12 +185,10 @@ main * + * {
 }
 
 .image-card {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    border-radius: 1rem;
-    cursor: zoom-in;
     position: relative;
+    overflow: hidden;
+    border-radius: 0.6rem;
+    cursor: zoom-in;
 }
 
 .image-card:before {
@@ -213,12 +207,16 @@ main * + * {
 }
 
 .magnifiable-image--is-magnified {
-    cursor: zoom-out;
-    width: 90%;
+    width: auto;
+    max-width: 90%;
+    height: auto;
+    max-height: 90%;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 0.2rem;
+    cursor: zoom-out;
     box-shadow: 0 0 1000px 0 #000;
 }
 

@@ -32,21 +32,22 @@ function hideMenu() {
 
 function toggleImageMagnificationOfTarget(event) {
     selectedMagnifiableImage = event.target;
-    // if (isAnImageMagnified) {
-    //     unMagnifyAllImages();
-    //     return;
-    // }
-
-    // magnifyImage(event.target);
 }
 
 function toggleImageMagnification(documentEvent) {
     if (!selectedMagnifiableImage) return;
 
+    const selectedMagnifiableImageParent = selectedMagnifiableImage.parentElement;
+
     if (isImageMagnified) {
         selectedMagnifiableImage.classList.remove('magnifiable-image--is-magnified');
+
+        removeStyle(selectedMagnifiableImageParent, 'width');
+        removeStyle(selectedMagnifiableImageParent, 'height');
+
         selectedMagnifiableImage = null;
         isImageMagnified = false;
+
         return;
     }
 
@@ -84,6 +85,15 @@ function scrollYToScrollElementToCenter(element) {
     const ScrollToY = elementCenterScrollY - windowHeight / 2;
 
     return ScrollToY;
+}
+
+function removeStyle(element, style) {
+    if (element.style.removeProperty) {
+        element.style.removeProperty(style);
+    } else {
+        /* IE < 9  */
+        element.style.removeAttribute(style);
+    }
 }
 
 // function unMagnifyClassReplacement(magnifiableImage) {
