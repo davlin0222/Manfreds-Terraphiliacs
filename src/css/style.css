@@ -214,6 +214,7 @@ main * + * {
     height: auto;
     max-height: 90%;
     position: fixed;
+    z-index: 9999;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -231,7 +232,7 @@ main * + * {
     font-size: 3rem;
     color: #d2e4e3;
     text-decoration: none;
-    text-shadow: 0.1rem 0.1rem 0.4rem #000;
+    text-shadow: 0.1rem 0.1rem 0.7rem #000;
 }
 
 footer {
