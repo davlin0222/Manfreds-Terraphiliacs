@@ -9,15 +9,11 @@
 <main>
     <h1 class="large-heading">Articles</div>
 
-    <a class="image-card">
+    <div class="image-card">
         <a class="image-card__text" href="/global-warming-effects">How global warming affects us</a>
 
         <img class="image-card__image magnifiable-image" src="../images/hurricane.png" alt="A hurricane seen from above">
-        <!-- <div style="background-image:url(../images/hurricane.png)">
-            <div onclick="link('global-warming-effects/')">
-            </div>
-        </div> -->
-    </a>
+    </div>
 
     <div class="card">
         <div style="background-image:url(../images/farming.png)">

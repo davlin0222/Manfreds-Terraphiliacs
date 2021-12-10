@@ -54,7 +54,11 @@ function toggleImageMagnification(documentEvent) {
     const scrollY = scrollYToScrollElementToCenter(selectedMagnifiableImageParent);
 
     const currentScrollY = Math.round(window.scrollY);
-    if (documentEvent.type === 'click' && currentScrollY !== scrollY) {
+
+    if (
+        documentEvent.type === 'click' &&
+        !isApproximatelyEqual(currentScrollY, scrollY, 1)
+    ) {
         window.scrollTo(0, scrollY);
         return;
     }
@@ -92,6 +96,10 @@ function removeStyle(element, style) {
         /* IE < 9  */
         element.style.removeAttribute(style);
     }
+}
+
+function isApproximatelyEqual(x, y, epsilon = 0.004) {
+    return Math.abs(x - y) < epsilon;
 }
 
 // function unMagnifyClassReplacement(magnifiableImage) {
